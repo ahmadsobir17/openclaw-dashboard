@@ -3,6 +3,7 @@
   "framework": "nextjs",
   "regions": ["sin1"],
   "rootDirectory": "dashboard",
+  "outputDirectory": ".next",
   "env": {
     "NEXT_TELEMETRY_DISABLED": "1"
   }
