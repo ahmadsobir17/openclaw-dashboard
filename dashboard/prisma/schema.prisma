@@ -1,0 +1,55 @@
+// Dashboard Prisma Schema (shared with agent)
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Account {
+  id        String   @id @default(cuid())
+  username  String   @unique
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  posts     Post[]
+}
+
+model Post {
+  id        String   @id
+  username  String
+  mediaType String
+  views     BigInt   @default(0)
+  likes     Int      @default(0)
+  comments  Int      @default(0)
+  permalink String
+  postDate  DateTime
+  fetchedAt DateTime @default(now())
+  account   Account  @relation(fields: [username], references: [username])
+
+  @@index([views(sort: Desc)])
+  @@index([username])
+  @@index([postDate])
+}
+
+model MonitorRun {
+  id            Int      @id @default(autoincrement())
+  runAt         DateTime @default(now())
+  accountsCount Int
+  postsFetched  Int
+  topPostUrl    String?
+  topViews      BigInt?
+  status        String
+  errorMessage  String?
+  durationMs    Int
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String
+  createdAt DateTime @default(now())
+}
