@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.next/
+.env
+logs/
+config/instagram_cookies.json
+.openclaw-setup/
+*.log
+.DS_Store
+.terraform/
+*.tfstate
+*.tfstate.backup

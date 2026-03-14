@@ -1,0 +1,15 @@
+node_modules
+dist
+.next
+.env
+logs
+config/instagram_cookies.json
+.openclaw-setup
+*.log
+.DS_Store
+.git
+.gitignore
+README.md
+*.md
+.github
+tests
