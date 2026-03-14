@@ -2,8 +2,6 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getSession } from '@/lib/getServerSession';
 import prisma from '@/lib/prisma';
 
-export const runtime = 'nodejs';
-
 export async function DELETE(
   request: NextRequest,
   { params }: { params: { id: string } }

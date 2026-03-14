@@ -5,9 +5,10 @@ node_modules/
 
 # Build outputs
 .next/
-out/
+.out/
 dist/
 build/
+.open-next/
 
 # Environment variables (WAJIB! jangan sampai ke-push)
 .env
@@ -16,6 +17,7 @@ build/
 .env.test.local
 .env.production.local
 .env.production
+.dev.vars
 
 # Prisma
 prisma/migrations/

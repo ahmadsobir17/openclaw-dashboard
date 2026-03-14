@@ -2,7 +2,6 @@ import { NextResponse } from 'next/server';
 import { getSession } from '@/lib/getServerSession';
 import prisma from '@/lib/prisma';
 
-export const runtime = 'nodejs';
 
 export async function GET(request: any) {
   const session = await getSession(request);

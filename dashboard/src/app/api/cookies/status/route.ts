@@ -1,7 +1,5 @@
 import { NextResponse } from 'next/server';
 
-export const runtime = 'nodejs';
-
 export async function GET() {
   try {
     const cookiesPath = process.env.COOKIES_PATH || 'config/instagram_cookies.json';

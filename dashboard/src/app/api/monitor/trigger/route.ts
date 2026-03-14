@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getSession } from '@/lib/getServerSession';
 
-export const runtime = 'nodejs';
-
 export async function POST(request: NextRequest) {
   const session = await getSession(request);
   if (!session) {
