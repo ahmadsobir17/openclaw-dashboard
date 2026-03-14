@@ -2,6 +2,7 @@
   "buildCommand": "prisma generate && next build",
   "framework": "nextjs",
   "regions": ["sin1"],
+  "rootDirectory": "dashboard",
   "env": {
     "NEXT_TELEMETRY_DISABLED": "1"
   }
